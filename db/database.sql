@@ -1,0 +1,11 @@
+-- CREATE DATABASE IF NOT EXISTS companydb;
+
+-- USE companydb;
+
+CREATE TABLE sensor (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  date DATETIME DEFAULT CURRENT_TIMESTAMP,
+  dato DECIMAL(3,2) DEFAULT 0, 
+  comentario VARCHAR(255)
+  PRIMARY KEY(id)
+);
