@@ -3,8 +3,8 @@ import { getSensor, createSensor } from "../controllers/sensor.controller.js";
 
 const router = Router();
 
-router.get("/api/sensor", getSensor);
+router.get("/sensor", getSensor);
 
-router.post("/api/sensor", createSensor);
+router.post("/sensor", createSensor);
 
 export default router;
