@@ -18,12 +18,13 @@ export const getSensor = async (req, res) => {
 
 export const createSensor = async (req, res) => {
   try {
+    console.log(req.body);
     const { date, dato, comentario } = req.body;
     const [rows] = await pool.query(
       "INSERT INTO sensor (date, dato, comentario) VALUES (?, ?, ?)",
       [date, dato, comentario]
     );
-    res.status(201).json({ id: rows.insertId, name, salary });
+    res.status(201).json({ id: rows.insertId, date, comentario });
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });
   }
