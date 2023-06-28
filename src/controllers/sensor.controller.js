@@ -18,10 +18,10 @@ export const getSensor = async (req, res) => {
 
 export const createSensor = async (req, res) => {
   try {
-    const { fecha_hora, dato, comentario } = req.body;
+    const { date, dato, comentario } = req.body;
     const [rows] = await pool.query(
-      "INSERT INTO sensor (fecha_hora, dato, comentario) VALUES (?, ?, ?)",
-      [fecha_hora, dato, comentario]
+      "INSERT INTO sensor (date, dato, comentario) VALUES (?, ?, ?)",
+      [date, dato, comentario]
     );
     res.status(201).json({ id: rows.insertId, name, salary });
   } catch (error) {
